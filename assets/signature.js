@@ -169,7 +169,7 @@ function validateInput(input) {
     return fieldError(input, value ? "" : "请填写房号。");
   }
   if (input.id === "consent") {
-    return fieldError(input, value ? "" : "提交前请确认使用范围。");
+    return fieldError(input, value ? "" : "提交前请确认代表授权及签名使用范围。");
   }
   return fieldError(input, "");
 }

@@ -44,9 +44,33 @@
         <section class="signature-card" id="signature-card" aria-labelledby="signature-title" hidden>
           <div class="signature-intro">
             <span class="eyebrow">业主共同意见</span>
-            <h1 id="signature-title">确认支持沟通诉求</h1>
-            <p>本人已阅读公开沟通材料，同意由业主代表就整改方案、品质补救及合理补偿与开发商进行正式沟通。</p>
+            <h1 id="signature-title">确认沟通计划与代表授权</h1>
+            <p>本次签名用于确认共同沟通计划，并授权业主代表按以下流程推进项目主入口整改事宜。</p>
           </div>
+
+          <section class="communication-plan" aria-labelledby="communication-plan-title">
+            <h2 id="communication-plan-title">三步沟通计划</h2>
+            <ol class="plan-list">
+              <li>
+                <strong>初步沟通，取得书面方案</strong>
+                <p>向开发商提出正式诉求，要求说明整改依据，提交完整整改方案，并明确书面回复、方案提交及实施的时间节点。</p>
+              </li>
+              <li>
+                <strong>带回邻里讨论，确认共同意见</strong>
+                <p>业主代表将开发商方案带回业主群，与邻居沟通并汇总意见，形成最终确认意见后再回复开发商。</p>
+              </li>
+              <li>
+                <strong>推动方案落地，持续反馈进度</strong>
+                <p>业主确认后，推动开发商按最终方案实施，持续反馈进展，并在完成后组织结果核验。</p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="authorization-note" aria-labelledby="authorization-title">
+            <h2 id="authorization-title">代表授权说明</h2>
+            <p>授权 <strong>XX、XX</strong> 作为业主代表，就项目主入口整改方案、时间节点、品质补救及相关事项与开发商进行沟通。</p>
+            <p class="authorization-boundary">代表无权单独替业主放弃权利、接受补偿或确认最终方案；重大方案应带回业主沟通确认后再推进。</p>
+          </section>
 
           <form id="signature-form" novalidate>
             <fieldset>
@@ -77,11 +101,11 @@
 
             <div class="consent-row">
               <input id="consent" name="consent" type="checkbox" aria-describedby="consent-error" required />
-              <label for="consent">我确认以上信息真实，并同意将本次签名用于项目主入口整改事项的业主沟通。</label>
+              <label for="consent">我确认以上信息真实，已阅读并同意上述沟通计划，授权 XX、XX 作为业主代表，就项目主入口整改事宜与开发商沟通。</label>
             </div>
             <p class="field-error" id="consent-error" data-error-for="consent" aria-live="polite"></p>
 
-            <p class="privacy-note">签名不会在公开页面展示，仅保存在本次沟通使用的数据库中。</p>
+            <p class="privacy-note">姓名、房号及签名不会在公开页面展示，仅保存在本次沟通使用的数据库中。</p>
             <button class="button button-primary submit-signature" id="signature-submit" type="submit">确认并提交签名</button>
             <div class="form-message" id="signature-message" role="status" aria-live="polite"></div>
           </form>
@@ -90,7 +114,7 @@
         <section class="success-card" id="success-card" tabindex="-1" aria-labelledby="success-title" hidden>
           <span class="success-seal" aria-hidden="true">✓</span>
           <span class="eyebrow">提交成功</span>
-          <h1 id="success-title">你的签名已保存</h1>
+          <h1 id="success-title">你的签名与授权已保存</h1>
           <p>回执编号：<strong id="receipt-code"></strong></p>
           <div class="success-actions">
             <a class="button button-secondary" href="../">返回查看材料</a>
