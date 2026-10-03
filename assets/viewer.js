@@ -4,10 +4,9 @@ const slides = [
   { src: "slides/slide-3.png", title: "后续整改可能涉及的入口位置", alt: "第 3 页：后续整改可能涉及的入口位置" },
   { src: "slides/slide-4.png", title: "销售沙盘展示与目前大门方案存在差异", alt: "第 4 页：销售沙盘展示与目前大门方案存在差异" },
   { src: "slides/slide-5.png", title: "销售展示与后续整改的矛盾，有法可依", alt: "第 5 页：销售展示与后续整改的法律依据" },
-  { src: "slides/slide-6.png", title: "方案一：入口整体内缩，两侧设置小罗汉松", alt: "第 6 页：方案一，入口整体内缩并设置两株小罗汉松" },
-  { src: "slides/slide-7.png", title: "方案二：右侧开口直达地下车库，主入口保留台阶与景观", alt: "第 7 页：方案二，右侧开口直达地下车库并保留主入口台阶与景观" },
-  { src: "slides/slide-8.png", title: "整改与补偿要求", alt: "第 8 页：整改与补偿要求" },
-  { src: "slides/slide-9.png", title: "要求开发商书面回复", alt: "第 9 页：要求开发商书面回复" },
+  { src: "slides/slide-6.png", title: "建议方案：入口整体内缩，两侧设置小罗汉松", alt: "第 6 页：建议入口整体内缩并设置两株小罗汉松" },
+  { src: "slides/slide-7.png", title: "整改与补偿要求", alt: "第 7 页：整改与补偿要求" },
+  { src: "slides/slide-8.png", title: "要求开发商书面回复", alt: "第 8 页：要求开发商书面回复" },
 ];
 
 const image = document.querySelector("#active-slide");
