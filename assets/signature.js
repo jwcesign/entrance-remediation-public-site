@@ -165,6 +165,9 @@ function validateInput(input) {
   if (input.id === "signer-name") {
     return fieldError(input, value.length >= 2 ? "" : "请填写至少两个字的姓名。");
   }
+  if (input.id === "residence") {
+    return fieldError(input, value ? "" : "请填写房号。");
+  }
   if (input.id === "consent") {
     return fieldError(input, value ? "" : "提交前请确认使用范围。");
   }
@@ -182,7 +185,7 @@ signatureForm.addEventListener("submit", async (event) => {
   const consent = document.querySelector("#consent");
   const accessCode = sessionStorage.getItem(SESSION_KEY) ?? "";
 
-  const inputsValid = [signerName, consent].map(validateInput).every(Boolean);
+  const inputsValid = [signerName, residence, consent].map(validateInput).every(Boolean);
   signatureError.textContent = hasInk ? "" : "请先在签名区域完成手写签名。";
   if (!inputsValid || !hasInk) {
     const firstError = signatureForm.querySelector('[aria-invalid="true"]') || canvas;
@@ -202,7 +205,7 @@ signatureForm.addEventListener("submit", async (event) => {
       },
       body: JSON.stringify({
         signerName: signerName.value.trim(),
-        residence: residence.value.trim() || null,
+        residence: residence.value.trim(),
         signatureDataUrl: canvas.toDataURL("image/png"),
         consent: true,
         browserLocale: navigator.language,
