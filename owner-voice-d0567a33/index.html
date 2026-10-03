@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16251f" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="description" content="项目主入口整改事项业主签名提交页面。" />
+    <title>业主签名 · 项目主入口整改事项</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316251f'/%3E%3Cpath d='M15 45V20h34v25M22 45V28h20v17' fill='none' stroke='%23c6a36a' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <script src="../assets/signature.js" defer></script>
+  </head>
+  <body class="signature-page">
+    <a class="skip-link" href="#signature-main">跳到签名表单</a>
+    <div class="signature-shell">
+      <header class="signature-header">
+        <div class="identity">
+          <span class="identity-mark" aria-hidden="true"></span>
+          <span>
+            <strong>业主签名</strong>
+            <small>项目主入口整改事项</small>
+          </span>
+        </div>
+        <a class="text-link" href="../">查看沟通材料</a>
+      </header>
+
+      <main id="signature-main">
+        <section class="access-panel" id="access-panel" aria-labelledby="access-title">
+          <span class="eyebrow">受限入口</span>
+          <h1 id="access-title">请输入访问码</h1>
+          <p>该页面不在公开材料中展示。请使用业主群内提供的访问码进入。</p>
+          <form class="compact-form" id="access-form" novalidate>
+            <div class="field">
+              <label for="access-code">访问码 <span aria-hidden="true">*</span></label>
+              <input id="access-code" name="accessCode" type="password" autocomplete="one-time-code" aria-describedby="access-code-error" required />
+              <p class="field-error" id="access-code-error" aria-live="polite"></p>
+            </div>
+            <button class="button button-primary" id="access-submit" type="submit">进入签名页</button>
+          </form>
+          <div class="form-message" id="access-message" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="signature-card" id="signature-card" aria-labelledby="signature-title" hidden>
+          <div class="signature-intro">
+            <span class="eyebrow">业主共同意见</span>
+            <h1 id="signature-title">确认支持沟通诉求</h1>
+            <p>本人已阅读公开沟通材料，同意由业主代表就整改方案、品质补救及合理补偿与开发商进行正式沟通。</p>
+          </div>
+
+          <form id="signature-form" novalidate>
+            <fieldset>
+              <legend>基本信息</legend>
+              <div class="field">
+                <label for="signer-name">姓名 <span aria-hidden="true">*</span></label>
+                <input id="signer-name" name="signerName" autocomplete="name" aria-describedby="signer-name-error" required maxlength="50" placeholder="请输入真实姓名" />
+                <p class="field-error" id="signer-name-error" data-error-for="signer-name" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="residence">房号（选填）</label>
+                <input id="residence" name="residence" aria-describedby="residence-error" maxlength="80" placeholder="例如：3 幢 1202 室" />
+                <p class="field-error" id="residence-error" data-error-for="residence" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="contact">联系方式（选填）</label>
+                <input id="contact" name="contact" aria-describedby="contact-error" maxlength="100" inputmode="tel" placeholder="仅用于必要时核实签名" />
+                <p class="field-error" id="contact-error" data-error-for="contact" aria-live="polite"></p>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>手写签名</legend>
+              <div class="signature-canvas-wrap" id="signature-canvas-wrap">
+                <canvas id="signature-canvas" tabindex="0" aria-label="手写签名区域" aria-describedby="signature-error"></canvas>
+                <span class="canvas-placeholder" id="canvas-placeholder">请在此处签名</span>
+              </div>
+              <div class="canvas-actions">
+                <p class="field-error" id="signature-error" aria-live="polite"></p>
+                <button class="text-button" id="clear-signature" type="button">清除重写</button>
+              </div>
+            </fieldset>
+
+            <div class="consent-row">
+              <input id="consent" name="consent" type="checkbox" aria-describedby="consent-error" required />
+              <label for="consent">我确认以上信息真实，并同意将本次签名用于项目主入口整改事项的业主沟通。</label>
+            </div>
+            <p class="field-error" id="consent-error" data-error-for="consent" aria-live="polite"></p>
+
+            <p class="privacy-note">签名不会在公开页面展示，仅保存在本次沟通使用的数据库中。</p>
+            <button class="button button-primary submit-signature" id="signature-submit" type="submit">确认并提交签名</button>
+            <div class="form-message" id="signature-message" role="status" aria-live="polite"></div>
+          </form>
+        </section>
+
+        <section class="success-card" id="success-card" tabindex="-1" aria-labelledby="success-title" hidden>
+          <span class="success-seal" aria-hidden="true">✓</span>
+          <span class="eyebrow">提交成功</span>
+          <h1 id="success-title">你的签名已保存</h1>
+          <p>回执编号：<strong id="receipt-code"></strong></p>
+          <div class="success-actions">
+            <a class="button button-secondary" href="../">返回查看材料</a>
+            <button class="text-button" id="submit-another" type="button">提交另一位业主</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16251f" />
+    <meta name="description" content="项目主入口整改事项业主沟通意见，共六页。" />
+    <title>项目主入口整改事项 · 业主沟通意见</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316251f'/%3E%3Cpath d='M15 45V20h34v25M22 45V28h20v17' fill='none' stroke='%23c6a36a' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script src="assets/viewer.js" defer></script>
+  </head>
+  <body class="viewer-page">
+    <a class="skip-link" href="#deck-stage">跳到演示内容</a>
+    <div class="page-frame">
+      <header class="topbar">
+        <div class="identity" aria-label="项目主入口整改事项">
+          <span class="identity-mark" aria-hidden="true"></span>
+          <span>
+            <strong>业主沟通意见</strong>
+            <small>项目主入口整改事项</small>
+          </span>
+        </div>
+        <div class="topbar-actions">
+          <span class="deck-count">共 6 页</span>
+          <a class="button button-secondary" href="files/project-entrance-owner-opinion.pptx" download>
+            下载 PPT
+          </a>
+        </div>
+      </header>
+
+      <main class="deck-layout" aria-label="沟通材料浏览器">
+        <nav class="thumbnail-rail" aria-label="选择幻灯片">
+          <button class="thumbnail is-active" type="button" data-slide="0" aria-current="page">
+            <span>01</span>
+            <img src="slides/slide-1.png" alt="封面缩略图" />
+          </button>
+          <button class="thumbnail" type="button" data-slide="1">
+            <span>02</span>
+            <img src="slides/slide-2.png" alt="入口体验缩略图" loading="lazy" />
+          </button>
+          <button class="thumbnail" type="button" data-slide="2">
+            <span>03</span>
+            <img src="slides/slide-3.png" alt="入口位置缩略图" loading="lazy" />
+          </button>
+          <button class="thumbnail" type="button" data-slide="3">
+            <span>04</span>
+            <img src="slides/slide-4.png" alt="销售展示与后续整改缩略图" loading="lazy" />
+          </button>
+          <button class="thumbnail" type="button" data-slide="4">
+            <span>05</span>
+            <img src="slides/slide-5.png" alt="整改与补偿要求缩略图" loading="lazy" />
+          </button>
+          <button class="thumbnail" type="button" data-slide="5">
+            <span>06</span>
+            <img src="slides/slide-6.png" alt="书面回复要求缩略图" loading="lazy" />
+          </button>
+        </nav>
+
+        <section class="stage-column" id="deck-stage" tabindex="-1">
+          <div class="stage-toolbar">
+            <div>
+              <span class="eyebrow">当前页面</span>
+              <h1 id="slide-title">项目主入口整改事项</h1>
+            </div>
+            <div class="stage-actions" aria-label="演示控制">
+              <button class="icon-button" id="previous-slide" type="button" aria-label="上一页">上一页</button>
+              <span class="page-indicator" id="page-indicator" aria-live="polite">1 / 6</span>
+              <button class="icon-button" id="next-slide" type="button" aria-label="下一页">下一页</button>
+              <button class="icon-button" id="fullscreen-slide" type="button">全屏查看</button>
+            </div>
+          </div>
+
+          <figure class="slide-stage" id="slide-stage" aria-busy="true">
+            <div class="slide-loading" id="slide-loading" role="status">正在加载页面…</div>
+            <img
+              id="active-slide"
+              src="slides/slide-1.png"
+              alt="第 1 页：项目主入口整改事项封面"
+              width="1600"
+              height="900"
+            />
+            <figcaption id="slide-caption">第 1 页，共 6 页</figcaption>
+            <div class="slide-error" id="slide-error" hidden>
+              <strong>这一页暂时没有加载成功</strong>
+              <button class="button button-secondary" id="retry-slide" type="button">重新加载</button>
+            </div>
+          </figure>
+
+          <p class="viewer-hint">可使用键盘左右方向键翻页；手机端可横向滑动缩略图。</p>
+        </section>
+      </main>
+    </div>
+
+    <noscript>
+      <div class="noscript-message">浏览此材料需要启用 JavaScript，也可以直接下载 PPT 文件。</div>
+    </noscript>
+  </body>
+</html>
