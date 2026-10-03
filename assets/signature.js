@@ -179,7 +179,6 @@ signatureForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const signerName = document.querySelector("#signer-name");
   const residence = document.querySelector("#residence");
-  const contact = document.querySelector("#contact");
   const consent = document.querySelector("#consent");
   const accessCode = sessionStorage.getItem(SESSION_KEY) ?? "";
 
@@ -204,7 +203,6 @@ signatureForm.addEventListener("submit", async (event) => {
       body: JSON.stringify({
         signerName: signerName.value.trim(),
         residence: residence.value.trim() || null,
-        contact: contact.value.trim() || null,
         signatureDataUrl: canvas.toDataURL("image/png"),
         consent: true,
         browserLocale: navigator.language,
