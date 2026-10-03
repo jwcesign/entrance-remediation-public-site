@@ -9,6 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316251f'/%3E%3Cpath d='M15 45V20h34v25M22 45V28h20v17' fill='none' stroke='%23c6a36a' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="assets/site.css" />
     <script src="assets/viewer.js" defer></script>
+    <script src="assets/opinions.js" defer></script>
   </head>
   <body class="viewer-page">
     <a class="skip-link" href="#deck-stage">跳到演示内容</a>
@@ -102,6 +103,86 @@
           <p class="viewer-hint">可使用键盘左右方向键翻页；手机端可横向滑动缩略图。</p>
         </section>
       </main>
+
+      <section class="opinions-section" id="owner-opinions" aria-labelledby="opinions-title">
+        <header class="opinions-heading">
+          <div>
+            <span class="eyebrow">业主意见</span>
+            <h2 id="opinions-title">对入口整改，你有什么建议？</h2>
+          </div>
+          <p>欢迎补充对安全、动线和造景品质的具体看法。房号用于确认业主身份，公开列表仅显示脱敏房号。</p>
+        </header>
+
+        <div class="opinions-layout">
+          <article class="opinion-compose" aria-labelledby="opinion-form-title">
+            <h3 id="opinion-form-title">留下意见</h3>
+            <form id="opinion-form" novalidate>
+              <div class="field">
+                <label for="opinion-residence">房号 <span aria-hidden="true">*</span></label>
+                <input
+                  id="opinion-residence"
+                  name="residence"
+                  type="text"
+                  maxlength="80"
+                  autocomplete="off"
+                  placeholder="例如：3幢1单元1201室"
+                  aria-describedby="opinion-residence-error"
+                  required
+                />
+                <p class="field-error" id="opinion-residence-error" data-opinion-error-for="opinion-residence" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <div class="field-label-row">
+                  <label for="opinion-content">意见 <span aria-hidden="true">*</span></label>
+                  <span id="opinion-counter" aria-live="polite">0 / 500</span>
+                </div>
+                <textarea
+                  id="opinion-content"
+                  name="content"
+                  rows="6"
+                  maxlength="500"
+                  placeholder="例如：建议优先优化人车交叉位置，并在满足安全距离的前提下丰富入口造景。"
+                  aria-describedby="opinion-content-error opinion-counter"
+                  required
+                ></textarea>
+                <p class="field-error" id="opinion-content-error" data-opinion-error-for="opinion-content" aria-live="polite"></p>
+              </div>
+
+              <div class="opinion-honeypot" aria-hidden="true">
+                <label for="opinion-website">网站</label>
+                <input id="opinion-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <p class="privacy-note">提交后，意见正文、脱敏房号和提交时间会公开展示；不收集姓名和联系方式。</p>
+              <button class="button button-primary opinion-submit" id="opinion-submit" type="submit">提交意见</button>
+              <div class="form-message" id="opinion-message" role="status" aria-live="polite"></div>
+            </form>
+          </article>
+
+          <article class="opinion-feed" aria-labelledby="opinion-list-title">
+            <div class="opinion-feed-header">
+              <div>
+                <h3 id="opinion-list-title">大家的意见</h3>
+                <p id="opinion-count">正在读取…</p>
+              </div>
+              <button class="text-button" id="opinion-refresh" type="button">刷新</button>
+            </div>
+
+            <div class="opinion-list-loading" id="opinion-list-loading" role="status">正在加载意见…</div>
+            <div class="opinion-list-state" id="opinion-list-empty" hidden>
+              <strong>还没有公开意见</strong>
+              <p>你可以成为第一个补充建议的人。</p>
+            </div>
+            <div class="opinion-list-state is-error" id="opinion-list-error" hidden>
+              <strong>意见列表暂时没有加载成功</strong>
+              <p>可以稍后重试，已填写的内容不会丢失。</p>
+              <button class="button button-secondary" id="opinion-retry" type="button">重新加载</button>
+            </div>
+            <ol class="opinion-list" id="opinion-list" aria-live="polite"></ol>
+          </article>
+        </div>
+      </section>
     </div>
 
     <noscript>
